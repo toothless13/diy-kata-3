@@ -14,6 +14,9 @@ const humanCatDogYears = (number) => {
         return catDogTwoYears + ((number - 2) * otherDogYears);
     }
 
+    if(typeof number !== 'number') {
+        return false;
+    }
     if(number === 0) {
         return [0, 0, 0];
     }
@@ -25,12 +28,11 @@ const humanCatDogYears = (number) => {
     }
     if(number > 2) {
         yearsArr.push(number);
-
         yearsArr.push(catAge(number));
         yearsArr.push(dogAge(number));
     }
+    
     return yearsArr;
-
 
 };
 
